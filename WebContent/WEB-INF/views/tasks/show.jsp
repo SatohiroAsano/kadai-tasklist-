@@ -7,10 +7,22 @@
             <c:when test="${task != null}">
 		        <h2>id : ${task.id} のタスク詳細ページ</h2>
 
-		        <p>タイトル：<c:out value="${task.title}" /></p>
-		        <p>内容：<c:out value="${task.content}" /></p>
-		        <p>期限：<c:out value="${task.limits}" /></p>
-
+                <table>
+				    <tbody>
+				        <tr>
+				            <th>タイトル</th>
+				            <td><c:out value="${task.title}" /></td>
+				        </tr>
+				        <tr>
+				            <th>内容</th>
+				            <td><c:out value="${task.content}" /></td>
+				        </tr>
+                        <tr>
+                            <th>期限</th>
+                            <td><c:out value="${task.limits}" /></td>
+                        </tr>
+				    </tbody>
+				</table>
 		        <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
 		        <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">このタスクを編集する</a></p>
             </c:when>
